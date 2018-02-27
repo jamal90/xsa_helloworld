@@ -1,0 +1,11 @@
+context books {
+
+entity Book {
+        key ISBN       : String(32);
+            TITLE      : String(256);
+            AUTHOR     : String(256);
+            NUMOFPAGES : Integer;
+            COUNTRY    : String(10);
+    };	
+
+};

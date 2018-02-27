@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="BooksByCountry" applyPrivilegeType="SQL_ANALYTIC_PRIVILEGE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="BooksByCountry"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="books.Book">
+    <resourceUri>books.Book</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="books.Book">
+  <attributes>
+    <attribute id="ISBN" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ISBN"/>
+      <keyMapping columnObjectName="books.Book" columnName="ISBN"/>
+    </attribute>
+    <attribute id="TITLE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="books.Book" columnName="TITLE"/>
+    </attribute>
+    <attribute id="AUTHOR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUTHOR"/>
+      <keyMapping columnObjectName="books.Book" columnName="AUTHOR"/>
+    </attribute>
+    <attribute id="NUMOFPAGES" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NUMOFPAGES"/>
+      <keyMapping columnObjectName="books.Book" columnName="NUMOFPAGES"/>
+    </attribute>
+    <attribute id="COUNTRY" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"/>
+      <keyMapping columnObjectName="books.Book" columnName="COUNTRY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

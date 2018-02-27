@@ -1,0 +1,9 @@
+FUNCTION "PARSE_ARRAY_TO_INT_TABLE" (IN in_string  VARCHAR(1024))
+       RETURNS first_element VARCHAR(256)
+       LANGUAGE SQLSCRIPT 
+       SQL SECURITY INVOKER AS 
+BEGIN 
+	SELECT REPLACE (:in_string,'"', '') into first_element FROM "DUMMY";
+	SELECT REPLACE (:first_element,'[', '') into first_element FROM "DUMMY";
+	SELECT REPLACE (:first_element,']', '') into first_element FROM "DUMMY";
+END;

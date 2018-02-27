@@ -1,0 +1,5 @@
+STRUCTURED PRIVILEGE 
+    "BooksByCountryFilter"
+    FOR SELECT ON 
+    "BooksByCountry"
+    where  "COUNTRY" = ( select "PARSE_ARRAY_TO_INT_TABLE"(SESSION_CONTEXT('XS_COUNTRY')) from "DUMMY" )
