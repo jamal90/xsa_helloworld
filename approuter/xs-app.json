@@ -1,0 +1,10 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "/services/(.*)",
+		"target": "$1",
+		"destination": "books_be",
+		"scope": "$XSAPPNAME.read"
+	}]
+}

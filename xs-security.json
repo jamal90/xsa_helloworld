@@ -1,0 +1,25 @@
+{
+	"xsappname": "secure_helloworld",
+	"tenant-mode": "dedicated",
+
+	"scopes": [{
+		"name": "$XSAPPNAME.read",
+		"description": "Read access to the odata service"
+	}],
+
+	"attributes": [{
+		"name": "country",
+		"description": "country",
+		"valueType": "string"
+	}],
+
+	"role-templates": [{
+		"name": "BooksViewer",
+		"description": "View Books",
+		"scope-references": [
+			"$XSAPPNAME.read",
+			"uaa.user"
+		],
+		"attribute-references": ["country"]
+	}]
+}

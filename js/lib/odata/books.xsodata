@@ -1,0 +1,3 @@
+service namespace "books"{
+	"BooksByCountry" as "Books" keys generate local "ID";
+}

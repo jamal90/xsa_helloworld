@@ -1,19 +1,43 @@
 ID: xsa_secure_helloworld
 _schema-version: '2.0'
 version: 0.0.1
-
 modules:
- - name: db
-   type: hdb
-   path: db
-   requires:
-    - name: hdi_db
-
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_db
+  - name: js
+    type: nodejs
+    path: js
+    provides:
+      - name: js_api
+        properties:
+          js_api_url: '${default-url}'
+    requires:
+      - name: db
+      - name: hdi_db
+  - name: approuter
+    type: html5
+    path: approuter
+    requires:
+      - name: uaa_books
+      - name: js_api
+        group: destinations
+        properties:
+          name: books_be
+          url: ~{js_api_url}
+          forwardAuthToken: true
 resources:
- - name: hdi_db
-   parameters:
+  - name: hdi_db
+    parameters:
       config:
-         schema: BOOKS
-   properties:
-      hdi-container-name: ${service-name}
-   type: com.sap.xs.hdi-container
+        schema: BOOKS
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: uaa_books
+    type: com.sap.xs.uaa
+    parameters: 
+      path: ./xs-security.json
+
