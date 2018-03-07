@@ -1,3 +1,14 @@
 service namespace "books"{
-	"BooksByCountry" as "Books" keys generate local "ID";
+  // service level scope check
+  scopes(
+	read("read"),
+	create("read"),
+	update("read"),
+	delete("read")
+  );
+  
+  "BooksByCountry" as "Books" keys generate local "ID" // calcuation view - readonly entity
+	create forbidden
+	update forbidden
+	delete forbidden;
 }

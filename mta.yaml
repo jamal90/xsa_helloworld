@@ -17,6 +17,7 @@ modules:
     requires:
       - name: db
       - name: hdi_db
+      - name: uaa_books
   - name: approuter
     type: html5
     path: approuter
