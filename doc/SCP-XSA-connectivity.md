@@ -84,8 +84,10 @@ The sample application can be cloned to your local space, and deployed. Also, cr
 
 ### 1. Configure Role and Role Collections
 
+SAP documentation: 
+https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/f12a65728bfd4565acd5d7f697c100e8.html
 
-### 2. Configure the External IdP for XSA (Not in Blog)
+### 2. Configure the External IdP for XSA 
 
 #### 2.1 Steps to configure an external IdP for XSA
 
